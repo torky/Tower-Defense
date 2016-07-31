@@ -44,6 +44,9 @@ public class Projectile {
         if(!hasHit) {
             move(mob);
         }
+        else{
+            xPos=-100;
+        }
     }
 
     public boolean isHasHit(){
