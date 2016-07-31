@@ -15,18 +15,15 @@ public class Level1 extends Level{
         bonusForPassingLevel = 100;
     }
 
-    //returns true if mobs are all gone
-    public boolean releaseNextMob(){
-        if(getMobs().size()>currentTicks) {
+    public void releaseNextMob(){
+        if(getMobs().size()>currentMob) {
             currentTicks++;
             if (currentTicks >= 100) {
                 getMob(currentMob).activate();
                 currentMob++;
                 resetTicks();
+                System.out.println("Releasing a Mob");
             }
-            return false;
-        }else{
-            return true;
         }
     }
 }

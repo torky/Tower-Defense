@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class MageTower extends Tower{
     //attackSpeed, Damage, Range, x, y, Cost
     public MageTower(double x_pos, double y_pos){
-        super(8, 50, 8, x_pos, y_pos, 300);
+        super(8000, 50, 8, x_pos, y_pos, 300);
     }
 
     public void attack(ArrayList<Mob> mobs){

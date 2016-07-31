@@ -109,12 +109,10 @@ public abstract class Mob {
 
     public void act(Path p){
         if(active) {
-            if (!(health > 0) || dead) {
-                if(!dead){
-                    die();
-                }
-            } else {
+            if (health > 0){
                 move(p);
+            }else{
+                die();
             }
         }
     }

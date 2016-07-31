@@ -58,7 +58,6 @@ public class Game implements ActionListener{
         activeLevel.runMobs();
         player.runTowers(activeLevel.getMobs());
         gp.repaint();
-        System.out.println("Starting");
     }
 
     public Level getActiveLevel(){

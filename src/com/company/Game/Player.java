@@ -74,7 +74,7 @@ public class Player {
     public void runTowers(ArrayList<Mob> mobs){
         if(!mobs.isEmpty()) {
             for (Tower t : towers) {
-                t.closestMob(mobs);
+                t.attack(mobs);
             }
         }
     }

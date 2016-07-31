@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Cannon extends Tower{
     //attackSpeed, Damage, Range, x, y, Cost
     public Cannon(double x_pos, double y_pos) {
-        super(3, 200, 7, x_pos, y_pos, 300);
+        super(3000, 200, 7, x_pos, y_pos, 300);
     }
 
     public void attack(ArrayList<Mob> mobs){

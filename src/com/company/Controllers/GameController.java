@@ -10,7 +10,7 @@ import java.awt.event.*;
 /**
  * Created by tylercai on 7/30/16.
  */
-public class GameController implements MouseListener, KeyListener{
+public class GameController implements KeyListener, MouseListener{
 
     private GamePanel gp;
     private Game game;
@@ -18,6 +18,7 @@ public class GameController implements MouseListener, KeyListener{
     public GameController(GamePanel gp){
         this.gp = gp;
         game = new Game(gp);
+        gp.addKeyListener(this);
     }
 
     public Game getGame(){
@@ -35,6 +36,11 @@ public class GameController implements MouseListener, KeyListener{
     public void mouseReleased(MouseEvent e) {
         System.out.println("Building a tower");
         game.getPlayer().addTower(Player.ARCHER_TOWER, e.getX(), e.getY());
+
+        if(e.getButton() == MouseEvent.BUTTON3){
+            System.out.println("SecondMouse");
+            game.startNextLevel();
+        }
     }
 
     public void mouseEntered(MouseEvent e) {
@@ -46,11 +52,11 @@ public class GameController implements MouseListener, KeyListener{
     }
 
     public void keyTyped(KeyEvent e) {
-
+        System.out.println("KeyTyped");
     }
 
     public void keyPressed(KeyEvent e) {
-
+        System.out.println("KeyPressed");
     }
 
     public void keyReleased(KeyEvent e) {

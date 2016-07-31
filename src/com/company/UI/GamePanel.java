@@ -21,11 +21,13 @@ public class GamePanel extends JPanel{
         gc = new GameController(this);
         this.addMouseListener(gc);
         this.addKeyListener(gc);
+        main.addKeyListener(gc);
         this.setBackground(Color.GREEN);
         this.setSize(800, 600);
     }
 
     public void paintComponent(Graphics g){
+        super.paintComponent(g);
         for(Tower t : gc.getGame().getPlayer().getTowers()){
             t.draw(g);
         }

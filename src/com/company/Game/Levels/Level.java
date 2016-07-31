@@ -102,5 +102,5 @@ public abstract class Level {
     }
 
     //returns true if mobs are all gone
-    public abstract boolean releaseNextMob();
+    public abstract void releaseNextMob();
 }

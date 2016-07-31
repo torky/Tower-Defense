@@ -10,7 +10,8 @@ import java.util.ArrayList;
  * Created by zackli on 7/30/16.
  */
 abstract public class Tower {
-    private double atk_spd;
+    private int atk_spd;
+    int atk_coolDown;
     private int damage;
     private double range;
     private double x_pos;
@@ -20,16 +21,17 @@ abstract public class Tower {
 
     Player player;
 
-    public Tower(double atk_spd, int damage, double range, double x_pos, double y_pos, int price){
+    public Tower(int atk_spd, int damage, double range, double x_pos, double y_pos, int price){
         this.atk_spd = atk_spd;
         this.damage = damage;
         this.range = range;
         this.x_pos = x_pos;
         this.y_pos = y_pos;
         this.price = price;
+        this.atk_coolDown = 0;
     }
 
-    public double getAtk_spd() {
+    public int getAtk_spd() {
         return atk_spd;
     }
 
@@ -53,7 +55,7 @@ abstract public class Tower {
         return price;
     }
 
-    public void setAtk_spd(float atk_spd) {
+    public void setAtk_spd(int atk_spd) {
         this.atk_spd = atk_spd;
     }
 

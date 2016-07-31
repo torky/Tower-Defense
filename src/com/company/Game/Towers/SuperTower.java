@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class SuperTower extends Tower{
     //attackSpeed, Damage, Range, x, y, Cost
     public SuperTower(double x_pos, double y_pos){
-        super(20, 50, 15, x_pos, y_pos, 1000);
+        super(200, 50, 15, x_pos, y_pos, 1000);
     }
 
     public void attack(ArrayList<Mob> mobs){
