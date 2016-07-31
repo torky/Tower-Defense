@@ -23,7 +23,7 @@ public class MainPanel extends JPanel{
         window = w;
         menu = new MenuPanel(this);
         this.add(menu);
-        this.setPreferredSize(new Dimension(800, 600));
+        this.setPreferredSize(new Dimension(814, 610));
     }
 
     public void changeState(int newState){
