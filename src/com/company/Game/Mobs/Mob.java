@@ -1,5 +1,7 @@
 package com.company.Game.Mobs;
 
+import com.company.Game.Player;
+
 /**
  * Created by zackli on 7/30/16.
  */
@@ -9,11 +11,14 @@ public abstract class Mob {
     private float x_pos;
     private float y_pos;
 
-    public Mob(int health, int speed, float x_pos, float y_pos) {
+    Player player;
+
+    public Mob(int health, int speed, float x_pos, float y_pos, Player player) {
         this.health = health;
         this.speed = speed;
         this.x_pos = x_pos;
         this.y_pos = y_pos;
+        this.player = player;
     }
 
     public int getHealth() {
@@ -60,7 +65,7 @@ public abstract class Mob {
     }
 
     public void die(){
-
+        player.reduceHealth();
     }
 
 }

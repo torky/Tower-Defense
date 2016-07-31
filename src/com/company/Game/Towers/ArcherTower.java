@@ -14,6 +14,11 @@ public class ArcherTower extends Tower {
     }
 
     public void upgrade(){
+        setAtk_spd(15);
+        setDamage(15);
+        setRange(12);
+        player.ChangeMoney(-125);
+
 
     }
 

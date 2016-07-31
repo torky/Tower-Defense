@@ -15,6 +15,9 @@ public class SuperTower extends Tower{
     }
 
     public void upgrade(){
-
+        setAtk_spd(40);
+        setDamage(60);
+        setRange(20);
+        player.ChangeMoney(-1500);
     }
 }

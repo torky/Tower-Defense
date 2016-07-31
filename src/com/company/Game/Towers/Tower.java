@@ -23,6 +23,8 @@ abstract public class Tower {
         this.y_pos = y_pos;
         this.price = price;
         this.player = player;
+
+        player.ChangeMoney(-price);
     }
 
     public float getAtk_spd() {
@@ -76,7 +78,7 @@ abstract public class Tower {
     abstract public void attack();
 
     public void sell(){
-        player.ChangeMoney(price);
+        player.ChangeMoney((int)(price * .8));
     }
 
     abstract public void upgrade();

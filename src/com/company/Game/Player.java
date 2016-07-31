@@ -5,9 +5,19 @@ package com.company.Game;
  */
 public class Player {
     private int money;
+    private int health;
+
+    public Player() {
+        this.money = 600;
+        this.health = 100;
+    }
 
     public void ChangeMoney(int change){
         money += change;
+    }
+
+    public void reduceHealth(){
+        health -= 1;
     }
 
 
@@ -15,7 +25,16 @@ public class Player {
         return money;
     }
 
+    public int getHealth() {
+        return health;
+    }
+
+
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
     }
 }

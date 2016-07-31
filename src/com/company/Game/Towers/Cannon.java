@@ -15,7 +15,10 @@ public class Cannon extends Tower{
     }
 
     public void upgrade(){
-
+        setAtk_spd(5);
+        setDamage(300);
+        setRange(8);
+        player.ChangeMoney(-400);
     }
 
 }
