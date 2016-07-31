@@ -11,7 +11,7 @@ public class Nick extends Mob{
     //
     public Nick(double xPos, double yPos){
         //Health, speed, x, y
-        super(100,1,xPos,yPos);
+        super(100,2,xPos,yPos);
         color = Color.RED;
 
     }

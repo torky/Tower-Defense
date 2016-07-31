@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public abstract class Mob {
     private int health;
-    private int speed;
+    private double speed;
     private double xPos;
     private double yPos;
     private boolean active;
@@ -19,7 +19,7 @@ public abstract class Mob {
 
     private int pathIndex;
 
-    public Mob(int health, int speed, double xPos, double yPos) {
+    public Mob(int health, double speed, double xPos, double yPos) {
         this.health = health;
         this.speed = speed;
         this.xPos = xPos;
@@ -33,7 +33,7 @@ public abstract class Mob {
         return health;
     }
 
-    public int getSpeed() {
+    public double getSpeed() {
         return speed;
     }
 
@@ -49,7 +49,7 @@ public abstract class Mob {
         this.health = health;
     }
 
-    public void setSpeed(int speed) {
+    public void setSpeed(double speed) {
         this.speed = speed;
     }
 
