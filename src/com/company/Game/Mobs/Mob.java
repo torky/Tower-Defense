@@ -93,6 +93,10 @@ public abstract class Mob {
 
     }
 
+    public boolean isActive(){
+        return active;
+    }
+
     public void activate(){
         active = true;
     }
