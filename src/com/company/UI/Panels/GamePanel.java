@@ -26,6 +26,7 @@ public class GamePanel extends JPanel{
         this.setBackground(Color.GREEN);
         this.setSize(700, 600);
         this.setPreferredSize(new Dimension(700, 600));
+        repaint();
     }
 
     public GameMenuPanel getGameMenuPanel(){
@@ -34,14 +35,14 @@ public class GamePanel extends JPanel{
 
     public void paintComponent(Graphics g){
         super.paintComponent(g);
+        Path path = gc.getGame().getPath();
+        path.draw(g);
+
         for(Tower t : gc.getGame().getPlayer().getTowers()){
             t.draw(g);
         }
 
         if(gc.getGame().getActiveLevel() != null) {
-            Path path = gc.getGame().getActiveLevel().getPath();
-            path.draw(g);
-
             for (Mob m : gc.getGame().getActiveLevel().getMobs()) {
                 m.draw(g);
             }

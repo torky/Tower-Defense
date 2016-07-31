@@ -38,6 +38,10 @@ public class Game implements ActionListener{
         start();
     }
 
+    public Path getPath(){
+        return path;
+    }
+
     public Player getPlayer(){
         return player;
     }
