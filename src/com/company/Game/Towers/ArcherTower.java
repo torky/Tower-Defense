@@ -1,23 +1,34 @@
 package com.company.Game.Towers;
-import com.company.Game.Player;
+import com.company.Game.Mobs.Mob;
+
+import java.awt.*;
+import java.util.ArrayList;
+
 /**
  * Created by zackli on 7/30/16.
  */
 public class ArcherTower extends Tower {
-    public ArcherTower(float x_pos, float y_pos, Player player){
-        super(10, 10, 10, x_pos, y_pos, 100, player);
+    //attackSpeed, Damage, Range, x, y, Cost
+    public ArcherTower(double x_pos, double y_pos){
+        super(10, 10, 10, x_pos, y_pos, 100);
+        color = Color.BLACK;
 
     }
 
-    public void attack(){
-
+    public void attack(ArrayList<Mob> mobs){
+        Mob target = closestMob(mobs);
+        if(target!=null){
+            if(distanceSquared(target.getxPos(), target.getyPos()) <= getRange() * getRange()){
+                target.reduceHealth(getDamage());
+            }
+        }
     }
 
     public void upgrade(){
         setAtk_spd(15);
         setDamage(15);
         setRange(12);
-        player.ChangeMoney(-125);
+        player.changeMoney(-125);
 
 
     }

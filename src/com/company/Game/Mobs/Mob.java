@@ -1,6 +1,8 @@
 package com.company.Game.Mobs;
 
-import com.company.Game.Player;
+import com.company.Game.Path;
+
+import java.awt.*;
 
 /**
  * Created by zackli on 7/30/16.
@@ -8,17 +10,23 @@ import com.company.Game.Player;
 public abstract class Mob {
     private int health;
     private int speed;
-    private float x_pos;
-    private float y_pos;
+    private double xPos;
+    private double yPos;
+    private boolean active;
 
-    Player player;
+    Color color;
+    public boolean dead;
 
-    public Mob(int health, int speed, float x_pos, float y_pos, Player player) {
+    private int pathIndex;
+
+    public Mob(int health, int speed, double xPos, double yPos) {
         this.health = health;
         this.speed = speed;
-        this.x_pos = x_pos;
-        this.y_pos = y_pos;
-        this.player = player;
+        this.xPos = xPos;
+        this.yPos = yPos;
+        this.pathIndex = 0;
+
+        this.dead = false;
     }
 
     public int getHealth() {
@@ -29,12 +37,12 @@ public abstract class Mob {
         return speed;
     }
 
-    public float getX_pos() {
-        return x_pos;
+    public double getxPos() {
+        return xPos;
     }
 
-    public float getY_pos() {
-        return y_pos;
+    public double getyPos() {
+        return yPos;
     }
 
     public void setHealth(int health) {
@@ -45,19 +53,47 @@ public abstract class Mob {
         this.speed = speed;
     }
 
-    public void setX_pos(float x_pos) {
-        this.x_pos = x_pos;
+    public void setxPos(float xPos) {
+        this.xPos = xPos;
     }
 
-    public void setY_pos(float y_pos) {
-        this.y_pos = y_pos;
+    public void setyPos(float yPos) {
+        this.yPos = yPos;
     }
 
+    //returns true if it has reached the end of its path
+    public boolean move(Path path){
+        if(path.length() > pathIndex) {
+            if (move(path.getPointAtIndex(pathIndex))) {
+                pathIndex++;
+            }
+            return false;
+        }else{
+            return true;
+        }
+    }
 
+    //returns true if it has reached the end of its path
+    public boolean move(Point p){
 
+        double x = p.getX() - xPos;
+        double y = p.getY() - yPos;
 
-    public void move(){
+        double distanceSquared = x*x + y*y;
+        double distance = Math.sqrt(distanceSquared);
+        xPos = xPos + speed * x / distance;
+        yPos = yPos + speed * y / distance;
 
+        if(x<1 && x>-1 && y<1 && y>-1){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public void activate(){
+        active = true;
     }
 
     public void reduceHealth(int damage){
@@ -65,13 +101,26 @@ public abstract class Mob {
     }
 
     public void die(){
-
+        dead = true;
+        setSpeed(0);
+        setxPos(-100);
+        setyPos(0);
     }
 
-    public void dieAtEnd(){
-        die();
-        player.reduceHealth();
+    public void act(Path p){
+        if(active) {
+            if (!(health > 0) || dead) {
+                if(!dead){
+                    die();
+                }
+            } else {
+                move(p);
+            }
+        }
     }
 
-
+    public void draw(Graphics g){
+        g.setColor(color);
+        g.fillRect((int)xPos - 15, (int)yPos - 15, 30, 30);
+    }
 }

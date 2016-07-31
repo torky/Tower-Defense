@@ -6,8 +6,8 @@ import com.company.Game.Player;
  * Created by zackli on 7/30/16.
  */
 public class SlowNick extends Mob {
-    public SlowNick(Player player){
-        super(300,2,0,0,player);
+    public SlowNick(double xPos, double yPos){
+        super(300,2,xPos,yPos);
 
     }
 

@@ -17,4 +17,21 @@ public class Path {
         points.add(start);
         points.add(end);
     }
+
+    public Point getPointAtIndex(int index){
+        return points.get(index);
+    }
+
+    public int length(){
+        return points.size();
+    }
+
+    public void draw(Graphics g){
+        g.setColor(Color.MAGENTA);
+        for(int i = 0; i < length()-1; i++){
+            Point pStart = points.get(i);
+            Point pEnd = points.get(i+1);
+            g.drawLine(pStart.x, pStart.y, pEnd.x, pEnd.y);
+        }
+    }
 }
