@@ -17,7 +17,7 @@ public class ArcherTower extends Tower {
 
     public void attack(ArrayList<Mob> mobs){
         atk_coolDown++;
-        if(atk_coolDown>=getAtk_spd()) {
+        if(atk_coolDown>= getAtkPeriod()) {
 
             Mob target = closestMob(mobs);
             if (target != null) {
@@ -31,7 +31,7 @@ public class ArcherTower extends Tower {
     }
 
     public void upgrade(){
-        setAtk_spd(15);
+        setAtkPeriod(15);
         setDamage(15);
         setRange(12);
         player.changeMoney(-125);
