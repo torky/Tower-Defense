@@ -79,21 +79,25 @@ public abstract class Mob {
         double x = p.getX() - xPos;
         double y = p.getY() - yPos;
 
-        double distanceSquared = x*x + y*y;
-        double distance = Math.sqrt(distanceSquared);
-        xPos = xPos + speed * x / distance;
-        yPos = yPos + speed * y / distance;
-
         if(x<1 && x>-1 && y<1 && y>-1){
             return true;
         }else{
+            double distanceSquared = x*x + y*y;
+            double distance = Math.sqrt(distanceSquared);
+            xPos += speed * x / distance;
+            yPos += speed * y / distance;
+
+            System.out.println("x:" + xPos + "; y:" + yPos);
+            
             return false;
         }
 
     }
 
-    public void activate(){
+    public void activate(double x, double y){
         active = true;
+        xPos = x;
+        yPos = y;
     }
 
     public void reduceHealth(int damage){
