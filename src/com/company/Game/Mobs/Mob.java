@@ -65,7 +65,13 @@ public abstract class Mob {
     }
 
     public void die(){
+
+    }
+
+    public void dieAtEnd(){
+        die();
         player.reduceHealth();
     }
+
 
 }
