@@ -2,8 +2,10 @@ package com.company.Game.Towers;
 
 import com.company.Game.Mobs.Mob;
 import com.company.Game.Player;
+import com.company.Game.Projectiles.Projectile;
 
 import java.awt.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -18,6 +20,8 @@ abstract public class Tower {
     private double y_pos;
     private int price;
     Color color;
+
+    ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 
     Player player;
 
@@ -114,6 +118,11 @@ abstract public class Tower {
     public void draw(Graphics g){
         g.setColor(color);
         g.drawRect((int)x_pos - 15, (int)y_pos - 15, 30, 30);
+        for(Projectile p: projectiles){
+            if(p!=null) {
+                p.draw(g);
+            }
+        }
     }
     abstract public void upgrade();
 
