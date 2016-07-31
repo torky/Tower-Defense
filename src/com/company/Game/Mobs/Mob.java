@@ -64,7 +64,8 @@ public abstract class Mob {
     //returns true if it has reached the end of its path
     public boolean move(Path path){
         if(path.length() > pathIndex) {
-            if (move(path.getPointAtIndex(pathIndex))) {
+            Point target = path.getPointAtIndex(pathIndex);
+            if (move(target)) {
                 pathIndex++;
             }
             return false;
@@ -87,17 +88,13 @@ public abstract class Mob {
             xPos += speed * x / distance;
             yPos += speed * y / distance;
 
-            System.out.println("x:" + xPos + "; y:" + yPos);
-            
             return false;
         }
 
     }
 
-    public void activate(double x, double y){
+    public void activate(){
         active = true;
-        xPos = x;
-        yPos = y;
     }
 
     public void reduceHealth(int damage){

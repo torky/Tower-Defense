@@ -49,7 +49,7 @@ public class Game implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
-        activeLevel.releaseNextMob();
+        activeLevel.releaseMobs();
         if(activeLevel.allMobsDead()){
             currentLevel++;
             player.changeMoney(activeLevel.getBonusForPassingLevel());

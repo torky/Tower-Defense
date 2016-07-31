@@ -2,7 +2,6 @@ package com.company.Game.Levels;
 
 import com.company.Game.Mobs.*;
 import com.company.Game.Path;
-import com.company.Game.Player;
 
 import java.util.ArrayList;
 
@@ -12,7 +11,6 @@ import java.util.ArrayList;
 public abstract class Level {
 
     private ArrayList<Mob> mobs = new ArrayList<Mob>();
-    ;
     int numberOfNick;
     int numberOfFatNick;
     int numberOfFastNick;
@@ -21,7 +19,7 @@ public abstract class Level {
     int bonusForPassingLevel;
 
     int currentTicks;
-    int currentMob;
+    int currentMobIndex;
 
     Path path;
     int startX;
@@ -37,10 +35,10 @@ public abstract class Level {
         startX = (int)p.getPointAtIndex(0).getX();
         startY = (int)p.getPointAtIndex(0).getY();
         currentTicks = 0;
-        currentMob = 0;
+        currentMobIndex = 0;
     }
 
-    public void addNick(int number, int type){
+    public void addMob(int number, int type){
         for(int i = 0; i < number; i++){
             Mob m = null;
             switch(type){
@@ -82,13 +80,12 @@ public abstract class Level {
     }
 
     public boolean allMobsDead(){
-        boolean allDead = true;
         for(Mob m: mobs){
             if(!m.dead){
                 return false;
             }
         }
-        return allDead;
+        return true;
     }
 
     public void runMobs(){
@@ -102,5 +99,5 @@ public abstract class Level {
     }
 
     //returns true if mobs are all gone
-    public abstract void releaseNextMob();
+    public abstract void releaseMobs();
 }
