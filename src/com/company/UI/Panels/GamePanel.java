@@ -25,6 +25,7 @@ public class GamePanel extends JPanel{
         this.addKeyListener(gc);
         this.setBackground(Color.GREEN);
         this.setSize(700, 600);
+        this.setPreferredSize(new Dimension(700, 600));
     }
 
     public GameMenuPanel getGameMenuPanel(){

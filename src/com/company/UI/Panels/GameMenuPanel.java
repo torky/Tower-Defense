@@ -19,6 +19,9 @@ public class GameMenuPanel extends JPanel {
 
     public GameMenuPanel(GameController gc){
         this.gc = gc;
+
+        this.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+
         archerTower = new TowerButton("Archer Tower", GameController.ARCHER_TOWER, gc);
         cannon = new TowerButton("Cannon", GameController.CANNON, gc);
         mageTower = new TowerButton("Mage Tower", GameController.MAGE_TOWER, gc);
@@ -27,7 +30,14 @@ public class GameMenuPanel extends JPanel {
         this.add(cannon);
         this.add(mageTower);
         this.add(superTower);
+        archerTower.setVisible(true);
+        cannon.setVisible(true);
+        mageTower.setVisible(true);
+        superTower.setVisible(true);
+
         this.setSize(100, 600);
+        this.setPreferredSize(new Dimension(100, 600));
         this.setBackground(Color.BLACK);
+        this.setVisible(true);
     }
 }
