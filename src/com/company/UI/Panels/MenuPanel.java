@@ -1,4 +1,4 @@
-package com.company.UI;
+package com.company.UI.Panels;
 
 import javax.swing.*;
 import java.awt.*;

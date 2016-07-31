@@ -1,4 +1,4 @@
-package com.company.UI;
+package com.company.UI.Panels;
 
 import javax.swing.*;
 
@@ -28,6 +28,7 @@ public class MainPanel extends JPanel{
                 break;
             case GAME:
                 this.remove(game);
+                this.remove(game.getGameMenuPanel());
                 break;
         }
 
@@ -40,6 +41,7 @@ public class MainPanel extends JPanel{
             case GAME:
                 game = new GamePanel(this);
                 this.add(game);
+                this.add(game.getGameMenuPanel());
                 break;
         }
 

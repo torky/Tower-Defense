@@ -1,4 +1,4 @@
-package com.company.UI;
+package com.company.UI.Panels;
 
 import com.company.Controllers.GameController;
 import com.company.Game.Mobs.Mob;
@@ -15,15 +15,20 @@ public class GamePanel extends JPanel{
 
     private MainPanel main;
     private GameController gc;
+    private GameMenuPanel gmp;
 
     public GamePanel(MainPanel main){
         this.main = main;
         gc = new GameController(this);
+        gmp = new GameMenuPanel(gc);
         this.addMouseListener(gc);
         this.addKeyListener(gc);
-        main.addKeyListener(gc);
         this.setBackground(Color.GREEN);
-        this.setSize(800, 600);
+        this.setSize(700, 600);
+    }
+
+    public GameMenuPanel getGameMenuPanel(){
+        return gmp;
     }
 
     public void paintComponent(Graphics g){
@@ -33,12 +38,12 @@ public class GamePanel extends JPanel{
         }
 
         if(gc.getGame().getActiveLevel() != null) {
+            Path path = gc.getGame().getActiveLevel().getPath();
+            path.draw(g);
+
             for (Mob m : gc.getGame().getActiveLevel().getMobs()) {
                 m.draw(g);
             }
-
-            Path path = gc.getGame().getActiveLevel().getPath();
-            path.draw(g);
         }
     }
 

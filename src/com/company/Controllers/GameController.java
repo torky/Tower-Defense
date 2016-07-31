@@ -2,9 +2,8 @@ package com.company.Controllers;
 
 import com.company.Game.Game;
 import com.company.Game.Player;
-import com.company.UI.GamePanel;
+import com.company.UI.Panels.GamePanel;
 
-import javax.swing.*;
 import java.awt.event.*;
 
 /**
@@ -14,6 +13,13 @@ public class GameController implements KeyListener, MouseListener{
 
     private GamePanel gp;
     private Game game;
+    private int clickState = 0;
+
+    public final static int NONE = 0;
+    public final static int ARCHER_TOWER = 1;
+    public final static int CANNON = 2;
+    public final static int MAGE_TOWER = 3;
+    public final static int SUPER_TOWER = 4;
 
     public GameController(GamePanel gp){
         this.gp = gp;
@@ -25,6 +31,10 @@ public class GameController implements KeyListener, MouseListener{
         return game;
     }
 
+    public void setClickState(int state){
+        clickState = state;
+    }
+
     public void mouseClicked(MouseEvent e) {
 
     }
@@ -34,8 +44,23 @@ public class GameController implements KeyListener, MouseListener{
     }
 
     public void mouseReleased(MouseEvent e) {
-        System.out.println("Building a tower");
-        game.getPlayer().addTower(Player.ARCHER_TOWER, e.getX(), e.getY());
+        switch(clickState){
+            case ARCHER_TOWER:
+                game.getPlayer().addTower(Player.ARCHER_TOWER, e.getX(), e.getY());
+                break;
+            case CANNON:
+                game.getPlayer().addTower(Player.CANNON, e.getX(), e.getY());
+                break;
+            case MAGE_TOWER:
+                game.getPlayer().addTower(Player.MAGE_TOWER, e.getX(), e.getY());
+                break;
+            case SUPER_TOWER:
+                game.getPlayer().addTower(Player.SUPER_TOWER, e.getX(), e.getY());
+                break;
+        }
+
+        clickState = NONE;
+
 
         if(e.getButton() == MouseEvent.BUTTON3){
             System.out.println("SecondMouse");

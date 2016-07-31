@@ -1,6 +1,6 @@
 package com.company;
 
-import com.company.UI.MainPanel;
+import com.company.UI.Panels.MainPanel;
 import com.company.UI.Window;
 
 public class Main {
@@ -14,6 +14,7 @@ public class Main {
         w.add(m);
         w.pack();
         w.setSize(800, 600);
+        w.setResizable(false);
         w.repaint();
     }
 }

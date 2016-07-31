@@ -2,7 +2,7 @@ package com.company.Game;
 
 import com.company.Game.Levels.Level;
 import com.company.Game.Levels.Level1;
-import com.company.UI.GamePanel;
+import com.company.UI.Panels.GamePanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
