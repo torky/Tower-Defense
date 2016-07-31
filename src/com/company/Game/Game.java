@@ -2,6 +2,7 @@ package com.company.Game;
 
 import com.company.Game.Levels.Level;
 import com.company.Game.Levels.Level1;
+import com.company.Game.Levels.Level2;
 import com.company.UI.Panels.GamePanel;
 
 import javax.swing.*;
@@ -26,7 +27,7 @@ public class Game implements ActionListener{
         player = new Player();
         path = new Path();
         levels.add(new Level1(path));
-//        levels.add(new Level2(path));
+        levels.add(new Level2(path));
         currentLevel = 0;
         this.gp = gp;
     }

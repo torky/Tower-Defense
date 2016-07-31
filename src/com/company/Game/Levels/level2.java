@@ -3,17 +3,18 @@ package com.company.Game.Levels;
 import com.company.Game.Path;
 
 /**
- * Created by tylercai on 7/30/16.
+ * Created by zackli on 7/31/16.
  */
-public class Level1 extends Level{
-
+public class Level2 extends Level{
     Path path;
 
-    public Level1(Path p){
+    public Level2(Path p){
         super(p);
         path = p;
-        addMob(10, NICK);
-        bonusForPassingLevel = 100;
+        addMob(5, NICK);
+        addMob(5, SLOW_NICK);
+
+        bonusForPassingLevel = 200;
     }
 
     public void releaseMobs(){
@@ -27,4 +28,5 @@ public class Level1 extends Level{
             }
         }
     }
+
 }
