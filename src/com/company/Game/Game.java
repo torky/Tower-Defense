@@ -26,6 +26,7 @@ public class Game implements ActionListener{
         player = new Player();
         path = new Path();
         levels.add(new Level1(path));
+//        levels.add(new Level2(path));
         currentLevel = 0;
         this.gp = gp;
     }
