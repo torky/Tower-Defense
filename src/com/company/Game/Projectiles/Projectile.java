@@ -15,7 +15,7 @@ public class Projectile {
 
     boolean hasHit = false;
 
-    Mob mob;
+    private Mob mob;
 
     public Projectile(double speed, int damage, double x, double y, Mob m){
         this.speed = speed;
@@ -43,9 +43,6 @@ public class Projectile {
     public void act(){
         if(!hasHit) {
             move(mob);
-        }else{
-            xPos = -100;
-            yPos = 0;
         }
     }
 
