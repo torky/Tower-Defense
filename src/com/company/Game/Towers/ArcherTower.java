@@ -1,5 +1,5 @@
 package com.company.Game.Towers;
-import com.company.Player;
+import com.company.Game.Player;
 /**
  * Created by zackli on 7/30/16.
  */

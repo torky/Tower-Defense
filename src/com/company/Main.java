@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.UI.MainPanel;
+import com.company.UI.Window;
+
 public class Main {
 
     public static void main(String[] args) {

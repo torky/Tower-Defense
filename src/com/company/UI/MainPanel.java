@@ -1,7 +1,6 @@
-package com.company;
+package com.company.UI;
 
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * Created by tylercai on 7/30/16.
