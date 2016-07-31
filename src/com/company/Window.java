@@ -1,7 +1,15 @@
 package com.company;
 
+import javax.swing.*;
+
 /**
  * Created by tylercai on 7/30/16.
  */
-public class Window {
+public class Window extends JFrame{
+    public Window(){
+        super.setTitle("Yuri Defense");
+        this.setSize(800, 600);
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
 }
