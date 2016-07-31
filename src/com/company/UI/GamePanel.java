@@ -1,5 +1,7 @@
 package com.company.UI;
 
+import com.company.Controllers.GameController;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,18 +11,20 @@ import java.awt.*;
 public class GamePanel extends JPanel{
 
     private MainPanel main;
-    private Timer tm;
+    private GameController gc;
 
     public void start(){
-        tm.start();
+        gc.start();
     }
 
     public void stop(){
-        tm.stop();
+        gc.stop();
     }
 
     public GamePanel(MainPanel main){
         this.main = main;
+        gc = new GameController(this);
+        this.addMouseListener(gc);
         this.setBackground(Color.GREEN);
         this.setSize(800, 600);
     }
