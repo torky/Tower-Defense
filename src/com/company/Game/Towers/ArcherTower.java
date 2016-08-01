@@ -23,7 +23,7 @@ public class ArcherTower extends Tower {
             Mob target = closestMob(mobs);
             if (target != null && target.isActive()) {
                 if (distanceSquared(target.getxPos(), target.getyPos()) <= getRange() * getRange()) {
-                    projectiles.add(new Projectile(20, getDamage(), getX_pos(), getY_pos(), target));
+                    projectiles.add(new Projectile(20, getDamage(), getX_pos(), getY_pos(), target, 9));
                     System.out.println("Attacking");
                     atk_coolDown = 0;
                 }

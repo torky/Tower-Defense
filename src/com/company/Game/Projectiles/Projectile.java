@@ -12,17 +12,19 @@ public class Projectile {
     int damage;
     double xPos;
     double yPos;
+    int size;
 
     boolean hasHit = false;
 
     private Mob mob;
 
-    public Projectile(double speed, int damage, double x, double y, Mob m){
+    public Projectile(double speed, int damage, double x, double y, Mob m, int size){
         this.speed = speed;
         this.damage = damage;
         this.xPos = x;
         this.yPos = y;
         this.mob = m;
+        this.size = size;
     }
 
     //return true if we are close enough to the enemy mob
@@ -54,6 +56,6 @@ public class Projectile {
     }
 
     public void draw(Graphics g){
-        g.fillOval((int)xPos - 5, (int)yPos - 5, 10, 10);
+        g.fillOval((int)xPos - 5, (int)yPos - 5, size, size);
     }
 }
