@@ -1,6 +1,6 @@
 package com.company.Game.Levels;
 
-import com.company.Game.Path;
+import com.company.Game.Paths.Path;
 
 /**
  * Created by tylercai on 7/30/16.

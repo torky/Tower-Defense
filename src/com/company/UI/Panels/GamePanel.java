@@ -2,7 +2,7 @@ package com.company.UI.Panels;
 
 import com.company.Controllers.GameController;
 import com.company.Game.Mobs.Mob;
-import com.company.Game.Path;
+import com.company.Game.Paths.Path;
 import com.company.Game.Towers.Tower;
 
 import javax.swing.*;

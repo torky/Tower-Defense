@@ -58,7 +58,7 @@ public class GameController implements KeyListener, MouseListener{
                 game.getPlayer().addTower(Player.SUPER_TOWER, e.getX(), e.getY());
                 break;
         }
-
+        gp.repaint();
         clickState = NONE;
 
 

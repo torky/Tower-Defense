@@ -1,6 +1,6 @@
 package com.company.Game.Mobs;
 
-import com.company.Game.Path;
+import com.company.Game.Paths.Path;
 
 import java.awt.*;
 
