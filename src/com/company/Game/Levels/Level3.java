@@ -3,23 +3,26 @@ package com.company.Game.Levels;
 import com.company.Game.Paths.Path;
 
 /**
- * Created by tylercai on 7/30/16.
+ * Created by zackli on 8/1/16.
  */
-public class Level1 extends Level{
-
+public class Level3 extends Level{
     Path path;
 
-    public Level1(Path p){
+    public Level3(Path p){
         super(p);
         path = p;
-        addMob(10, NICK);
-        bonusForPassingLevel = 100;
+        addMob(2, NICK);
+        addMob(5, SLOW_NICK);
+        addMob(3, FAST_NICK);
+
+
+        bonusForPassingLevel = 300;
     }
 
     public void releaseMobs(){
         if(getMobs().size()> currentMobIndex) {
             currentTicks++;
-            if (currentTicks >= 10) {
+            if (currentTicks >= 8) {
                 getMob(currentMobIndex).activate();
                 currentMobIndex++;
                 resetTicks();

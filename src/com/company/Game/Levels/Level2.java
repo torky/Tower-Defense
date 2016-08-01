@@ -20,7 +20,7 @@ public class Level2 extends Level{
     public void releaseMobs(){
         if(getMobs().size()> currentMobIndex) {
             currentTicks++;
-            if (currentTicks >= 90) {
+            if (currentTicks >= 9) {
                 getMob(currentMobIndex).activate();
                 currentMobIndex++;
                 resetTicks();

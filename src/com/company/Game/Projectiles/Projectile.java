@@ -31,7 +31,7 @@ public class Projectile {
     public void move(Mob mob) {
         double x = mob.getxPos() - xPos;
         double y = mob.getyPos() - yPos;
-        if (x < 10 && x > -10 && y < 10 && y > -10) {
+        if (x < 15 && x > -15 && y < 15 && y > -15) {
             mob.reduceHealth(damage);
             hasHit = true;
         } else {
