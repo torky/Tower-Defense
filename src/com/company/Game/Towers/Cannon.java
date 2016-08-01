@@ -1,6 +1,7 @@
 package com.company.Game.Towers;
 
 import com.company.Game.Mobs.Mob;
+import com.company.Game.Projectiles.Projectile;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -20,11 +21,20 @@ public class Cannon extends Tower{
         if(atk_coolDown>= getAtkPeriod()) {
 
             Mob target = closestMob(mobs);
-            if (target != null) {
+            if (target != null && target.isActive()) {
                 if (distanceSquared(target.getxPos(), target.getyPos()) <= getRange() * getRange()) {
-                    target.reduceHealth(getDamage());
+                    projectiles.add(new Projectile(15, getDamage(), getX_pos(), getY_pos(), target));
                     System.out.println("Attacking");
                     atk_coolDown = 0;
+                }
+            }
+        }
+        for(Projectile p: projectiles){
+            if(p!=null) {
+                p.act();
+                if (p.isHasHit()) {
+                    p = null;
+                    projectiles.remove(p);
                 }
             }
         }
