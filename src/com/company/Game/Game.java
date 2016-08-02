@@ -1,6 +1,8 @@
 package com.company.Game;
 
-import com.company.Game.Levels.*;
+import com.company.Game.Levels.Level;
+import com.company.Game.Levels.Level1;
+import com.company.Game.Levels.Level2;
 import com.company.Game.Paths.Path;
 import com.company.Game.Paths.Path2;
 import com.company.UI.Panels.GamePanel;
@@ -28,11 +30,6 @@ public class Game implements ActionListener{
         path = new Path2();
         levels.add(new Level1(path));
         levels.add(new Level2(path));
-        levels.add(new Level3(path));
-        levels.add(new Level4(path));
-        levels.add(new Level5(path));
-
-
         currentLevel = 0;
         this.gp = gp;
     }
