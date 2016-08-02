@@ -5,7 +5,6 @@ import com.company.Game.Player;
 import com.company.Game.Projectiles.Projectile;
 
 import java.awt.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**

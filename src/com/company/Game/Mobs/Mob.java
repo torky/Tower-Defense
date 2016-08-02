@@ -45,7 +45,7 @@ public abstract class Mob {
         return yPos;
     }
 
-    
+
 
     public void setHealth(int health) {
         this.health = health;
