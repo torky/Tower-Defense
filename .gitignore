@@ -1,4 +1,13 @@
 
 .idea/workspace.xml
 
+<<<<<<< HEAD
+=======
+.idea/workspace.xml
+
+out/production/Tower-Defense/com/company/Game/Game.class
+
+out/production/Tower-Defense/com/company/Game/Levels/Level1.class
+
+>>>>>>> origin/master
 out/production/Tower-Defense/com/company/Game/Mobs/Mob.class
