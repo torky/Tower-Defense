@@ -43,7 +43,7 @@ public class Projectile {
     }
 
     public void act(){
-        if(!hasHit) {
+        if(!hasHit && mob.getHealth()>0) {
             move(mob);
         }
         else{
