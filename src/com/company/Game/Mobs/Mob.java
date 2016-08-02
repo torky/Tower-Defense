@@ -82,7 +82,7 @@ public abstract class Mob {
         double x = p.getX() - xPos;
         double y = p.getY() - yPos;
 
-        if(x<1 && x>-1 && y<1 && y>-1){
+        if(x<speed && x>-speed && y<speed && y>-speed){
             return true;
         }else{
             double distanceSquared = x*x + y*y;
