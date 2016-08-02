@@ -90,7 +90,10 @@ public abstract class Level {
 
     public void runMobs(){
         for(Mob m: mobs){
-            m.act(path);
+            if (m.act(path)){
+                m = null;
+                mobs.remove(m);
+            }
         }
     }
 

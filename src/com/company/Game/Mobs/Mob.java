@@ -114,14 +114,17 @@ public abstract class Mob {
         setyPos(0);
     }
 
-    public void act(Path p){
+    public boolean act(Path p){
+        //returns true if dead
         if(active) {
             if (health > 0){
                 move(p);
             }else{
                 die();
+                return true;
             }
         }
+        return false;
     }
 
     public void draw(Graphics g){
