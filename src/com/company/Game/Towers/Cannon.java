@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Cannon extends Tower{
     //attackSpeed, Damage, Range, x, y, Cost
     public Cannon(double x_pos, double y_pos) {
-        super(50, 110, 70, x_pos, y_pos, 300);
+        super(50, 100, 70, x_pos, y_pos, 300);
         color = Color.WHITE;
     }
 
