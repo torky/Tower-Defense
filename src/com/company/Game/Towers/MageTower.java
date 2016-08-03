@@ -5,6 +5,7 @@ import com.company.Game.Projectiles.Projectile;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by zackli on 7/30/16.
@@ -29,12 +30,22 @@ public class MageTower extends Tower{
                 }
             }
         }
-        for(Projectile p: projectiles){
-            if(p!=null) {
+//        for(Projectile p: projectiles){
+//            if(p!=null) {
+//                p.act();
+//                if (p.isHasHit()) {
+//                    p = null;
+//                    projectiles.remove(p);
+//                }
+//            }
+//        }
+        Iterator<Projectile> iter = projectiles.iterator();
+        while (iter.hasNext()){
+            Projectile p = iter.next();
+            if(p!=null){
                 p.act();
-                if (p.isHasHit()) {
-                    p = null;
-                    projectiles.remove(p);
+                if (p.isHasHit()){
+                    iter.remove();
                 }
             }
         }

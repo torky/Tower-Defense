@@ -5,6 +5,7 @@ import com.company.Game.Projectiles.Projectile;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by zackli on 7/30/16.
@@ -24,17 +25,28 @@ public class SuperTower extends Tower{
             if (target != null && target.isActive()) {
                 if (distanceSquared(target.getxPos(), target.getyPos()) <= getRange() * getRange()) {
                     projectiles.add(new Projectile(35, getDamage(), getX_pos(), getY_pos(), target, 10));
+                    System.out.println(projectiles.size());
                     System.out.println("Attacking");
                     atk_coolDown = 0;
                 }
             }
         }
-        for(Projectile p: projectiles){
-            if(p!=null) {
+//        for(Projectile p: projectiles){
+//            if(p!=null) {
+//                p.act();
+//                if (p.isHasHit()) {
+//                    p = null;
+//                    projectiles.remove(p);
+//                }
+//            }
+//        }
+        Iterator<Projectile> iter = projectiles.iterator();
+        while (iter.hasNext()){
+            Projectile p = iter.next();
+            if(p!=null){
                 p.act();
-                if (p.isHasHit()) {
-                    p = null;
-                    projectiles.remove(p);
+                if (p.isHasHit()){
+                    iter.remove();
                 }
             }
         }

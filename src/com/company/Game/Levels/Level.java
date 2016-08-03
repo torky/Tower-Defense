@@ -97,7 +97,7 @@ public abstract class Level {
         for(Mob m: mobs){
             if (m.act(path)){
 //                System.out.println("Mob died");
-//                m = null;
+                m = null;
                 mobs.remove(m);
             }
         }

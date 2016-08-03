@@ -58,4 +58,20 @@ public class Projectile {
     public void draw(Graphics g){
         g.fillOval((int)xPos - 5, (int)yPos - 5, size, size);
     }
+
+//    public boolean equals(Object object) {
+//        if(object instanceof Projectile && ((Projectile)object).id == this.id) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+//    public boolean equals(Object obj) {
+//        if (obj == null) return false;
+//        if (obj == this) return true;
+//        if (!(obj instanceof ArrayTest)) return false;
+//        ArrayTest o = (ArrayTest) obj;
+//        return o.i == this.i;
+//    }
+
 }
