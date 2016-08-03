@@ -9,7 +9,7 @@ public class Level3 extends Level{
     Path path;
 
     public Level3(Path p){
-        super(p);
+        super(p, 8);
         path = p;
         addMob(5, NICK);
         addMob(5, SLOW_NICK);
@@ -19,15 +19,5 @@ public class Level3 extends Level{
         bonusForPassingLevel = 300;
     }
 
-    public void releaseMobs(){
-        if(getMobs().size()> currentMobIndex) {
-            currentTicks++;
-            if (currentTicks >= 8) {
-                getMob(currentMobIndex).activate();
-                currentMobIndex++;
-                resetTicks();
-                System.out.println("Releasing a Mob");
-            }
-        }
-    }
+
 }

@@ -32,16 +32,7 @@ public class ArcherTower extends Tower {
             }
         }
 
-//        for(Projectile p: projectiles){
-//            if(p!=null) {
-//                p.act();
-//                if (p.isHasHit()) {
-//                    projectiles.remove(p);
-//                    p = null;
-//
-//                }
-//            }
-//        }
+
         Iterator<Projectile> iter = projectiles.iterator();
         while (iter.hasNext()){
             Projectile p = iter.next();

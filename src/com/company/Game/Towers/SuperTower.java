@@ -31,15 +31,7 @@ public class SuperTower extends Tower{
                 }
             }
         }
-//        for(Projectile p: projectiles){
-//            if(p!=null) {
-//                p.act();
-//                if (p.isHasHit()) {
-//                    p = null;
-//                    projectiles.remove(p);
-//                }
-//            }
-//        }
+
         Iterator<Projectile> iter = projectiles.iterator();
         while (iter.hasNext()){
             Projectile p = iter.next();

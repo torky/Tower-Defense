@@ -4,6 +4,7 @@ import com.company.Game.Mobs.*;
 import com.company.Game.Paths.Path;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by tylercai on 7/30/16.
@@ -15,6 +16,8 @@ public abstract class Level {
     int numberOfFatNick;
     int numberOfFastNick;
     int numberOfSlowNick;
+    int ticks;
+    int initialNumberOfNicks;
 
     int bonusForPassingLevel;
 
@@ -29,13 +32,17 @@ public abstract class Level {
     public final static int FAT_NICK = 1;
     public final static int FAST_NICK = 2;
     public final static int SLOW_NICK = 3;
+    public final static int SUPER_FAT_NICK = 4;
 
-    public Level(Path p) {
+
+    public Level(Path p, int ticks) {
         path = p;
         startX = (int)p.getPointAtIndex(0).getX();
         startY = (int)p.getPointAtIndex(0).getY();
         currentTicks = 0;
         currentMobIndex = 0;
+        this.ticks = ticks;
+        initialNumberOfNicks = 0;
     }
 
     public void addMob(int number, int type){
@@ -54,10 +61,14 @@ public abstract class Level {
                 case SLOW_NICK:
                     m = new SlowNick(startX, startY);
                     break;
+                case SUPER_FAT_NICK:
+                    m = new SlowNick(startX, startY);
+                    break;
             }
             if(m!=null)
             {
                 mobs.add(m);
+                initialNumberOfNicks++;
             }
         }
     }
@@ -80,25 +91,19 @@ public abstract class Level {
     }
 
     public boolean allMobsDead(){
-        for(Mob m: mobs){
-            if(!m.dead){
-                return false;
-            }
-        }
-        return true;
-//        for (Mob m:mobs){
-//            System.out.println(m);
-//        }
-//        System.out.println(mobs.size());
-//        return mobs.isEmpty();
+        return mobs.isEmpty();
+
     }
 
     public void runMobs(){
-        for(Mob m: mobs){
+        Iterator<Mob> iter = mobs.iterator();
+        System.out.println(mobs.size());
+        while (iter.hasNext()){
+            Mob m = iter.next();
             if (m.act(path)){
-//                System.out.println("Mob died");
-                m = null;
-                mobs.remove(m);
+                System.out.println("Mob died");
+                m=null;
+                iter.remove();
             }
         }
     }
@@ -108,5 +113,20 @@ public abstract class Level {
     }
 
     //returns true if mobs are all gone
-    public abstract void releaseMobs();
+    public void releaseMobs(){
+        if(initialNumberOfNicks > currentMobIndex) {
+            currentTicks++;
+            if (currentTicks >= ticks) {
+                for (Mob m : mobs){
+                    if (!m.isActive()){
+                        m.activate();
+                        break;
+                    }
+                }
+                currentMobIndex++;
+                resetTicks();
+                System.out.println("Releasing a Mob");
+            }
+        }
+    }
 }
