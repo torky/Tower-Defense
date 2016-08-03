@@ -102,7 +102,6 @@ public abstract class Level {
             Mob m = iter.next();
             if (m.act(path)){
                 System.out.println("Mob died");
-                m=null;
                 iter.remove();
             }
         }
