@@ -62,7 +62,7 @@ public abstract class Level {
                     m = new SlowNick(startX, startY);
                     break;
                 case SUPER_FAT_NICK:
-                    m = new SlowNick(startX, startY);
+                    m = new SuperFatNick(startX, startY);
                     break;
             }
             if(m!=null)
