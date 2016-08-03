@@ -23,6 +23,8 @@ public class Game implements ActionListener{
     private Path path;
     private GamePanel gp;
 
+    private boolean notDefeated;
+
     public Game(GamePanel gp){
         player = new Player();
         path = new Path2();
@@ -35,12 +37,17 @@ public class Game implements ActionListener{
 
         currentLevel = 0;
         this.gp = gp;
+        notDefeated = true;
     }
 
     public void startNextLevel(){
-        activeLevel = levels.get(currentLevel);
-        activeLevel.resetTicks();
-        start();
+        if(notDefeated) {
+            activeLevel = levels.get(currentLevel);
+            activeLevel.resetTicks();
+            start();
+        }else{
+            JOptionPane.showMessageDialog(null, "You just let Nick get too much Yuri. What a disgrace.");
+        }
     }
 
     public Path getPath(){
@@ -67,7 +74,11 @@ public class Game implements ActionListener{
             stop();
         }
         activeLevel.runMobs();
-        player.runTowers(activeLevel.getMobs());
+        if(player.defend(activeLevel.getMobs())){
+            stop();
+            notDefeated = false;
+            JOptionPane.showMessageDialog(null, "You just let Nick get too much Yuri. What a disgrace.");
+        }
         gp.repaint();
     }
 

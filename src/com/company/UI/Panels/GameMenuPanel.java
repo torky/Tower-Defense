@@ -17,6 +17,9 @@ public class GameMenuPanel extends JPanel {
     public TowerButton mageTower;
     public TowerButton superTower;
 
+    public JTextField playerHealth;
+    public JLabel playerHealthLabel;
+
     public GameMenuPanel(GameController gc){
         this.gc = gc;
 
@@ -26,14 +29,26 @@ public class GameMenuPanel extends JPanel {
         cannon = new TowerButton("Cannon", GameController.CANNON, gc);
         mageTower = new TowerButton("Mage Tower", GameController.MAGE_TOWER, gc);
         superTower = new TowerButton("Super Tower", GameController.SUPER_TOWER, gc);
+
+        playerHealth = new JTextField();
+        playerHealth.setText(String.valueOf(gc.getGame().getPlayer().getHealth()));
+        playerHealthLabel = new JLabel("<html><font color='white'>Health</font></html>");
+
         this.add(archerTower);
         this.add(cannon);
         this.add(mageTower);
         this.add(superTower);
+
+        this.add(playerHealthLabel);
+        this.add(playerHealth);
+
         archerTower.setVisible(true);
         cannon.setVisible(true);
         mageTower.setVisible(true);
         superTower.setVisible(true);
+
+        playerHealthLabel.setVisible(true);
+        playerHealth.setVisible(true);
 
         this.setSize(100, 600);
         this.setPreferredSize(new Dimension(100, 600));

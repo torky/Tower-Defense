@@ -15,7 +15,7 @@ public class Player {
 
     public Player() {
         this.money = 600;
-        this.health = 100;
+        this.health = 10;
     }
 
     public final static int ARCHER_TOWER = 0;
@@ -65,18 +65,26 @@ public class Player {
                 t = new SuperTower(startX, startY);
                 break;
         }
-        if(t!=null) {
+
+        if(t!=null && t.getPrice() <= getMoney()) {
             changeMoney(-t.getPrice());
             towers.add(t);
         }
     }
 
-    public void runTowers(ArrayList<Mob> mobs){
+    //returns true if defeated
+    public boolean defend(ArrayList<Mob> mobs){
+        if(health <= 0){
+            return true;
+        }
+
         if(!mobs.isEmpty()) {
             for (Tower t : towers) {
                 t.attack(mobs);
             }
         }
+
+        return false;
     }
 
     public ArrayList<Tower> getTowers(){
