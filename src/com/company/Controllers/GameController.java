@@ -44,6 +44,12 @@ public class GameController implements KeyListener, MouseListener{
     }
 
     public void mouseReleased(MouseEvent e) {
+        if(e.getButton() == MouseEvent.BUTTON3){
+            System.out.println("SecondMouse");
+            game.startNextLevel();
+            clickState = NONE;
+
+        }
         switch(clickState){
             case ARCHER_TOWER:
                 game.getPlayer().addTower(Player.ARCHER_TOWER, e.getX(), e.getY());
@@ -62,10 +68,7 @@ public class GameController implements KeyListener, MouseListener{
         clickState = NONE;
 
 
-        if(e.getButton() == MouseEvent.BUTTON3){
-            System.out.println("SecondMouse");
-            game.startNextLevel();
-        }
+
     }
 
     public void mouseEntered(MouseEvent e) {
