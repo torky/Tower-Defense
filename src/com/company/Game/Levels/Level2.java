@@ -1,6 +1,7 @@
 package com.company.Game.Levels;
 
 import com.company.Game.Paths.Path;
+import com.company.Game.Player;
 
 /**
  * Created by zackli on 7/31/16.
@@ -8,8 +9,8 @@ import com.company.Game.Paths.Path;
 public class Level2 extends Level{
     Path path;
 
-    public Level2(Path p){
-        super(p, 9);
+    public Level2(Path p, Player player){
+        super(p, 9, player);
         path = p;
         addMob(5, NICK);
         addMob(5, SLOW_NICK);

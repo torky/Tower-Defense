@@ -1,6 +1,7 @@
 package com.company.Game.Mobs;
 
 import com.company.Game.Paths.Path;
+import com.company.Game.Player;
 
 import java.awt.*;
 
@@ -13,20 +14,20 @@ public abstract class Mob {
     private double xPos;
     private double yPos;
     private boolean active;
+    Player player;
 
     Color color;
-    public boolean dead;
 
     private int pathIndex;
 
-    public Mob(int health, double speed, double xPos, double yPos) {
+    public Mob(int health, double speed, double xPos, double yPos, Player player) {
         this.health = health;
         this.speed = speed;
         this.xPos = xPos;
         this.yPos = yPos;
         this.pathIndex = 0;
+        this.player = player;
 
-        this.dead = false;
     }
 
     public int getHealth() {
@@ -108,7 +109,6 @@ public abstract class Mob {
     }
 
     public void die(){
-        dead = true;
         setSpeed(0);
         setxPos(-100);
         setyPos(0);
@@ -118,9 +118,17 @@ public abstract class Mob {
         //returns true if dead
         if(active) {
             if (health > 0){
-                move(p);
+                if(move(p)){
+                    die();
+                    player.reduceHealth();
+                    System.out.println(player.getHealth());
+                    return true;
+                }
             }else{
                 die();
+                player.changeMoney(100);
+                System.out.println(player.getMoney());
+
                 return true;
             }
         }

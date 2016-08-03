@@ -1,5 +1,7 @@
 package com.company.Game.Mobs;
 
+import com.company.Game.Player;
+
 import java.awt.*;
 
 /**
@@ -7,8 +9,8 @@ import java.awt.*;
  */
 public class SuperFatNick extends Mob{
     //not implemented yet
-    public SuperFatNick(double xPos, double yPos) {
-        super(3000, .7, xPos, yPos);
+    public SuperFatNick(double xPos, double yPos, Player player) {
+        super(3000, .7, xPos, yPos, player);
         color = Color.ORANGE;
     }
 }

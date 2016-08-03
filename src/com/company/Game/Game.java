@@ -28,12 +28,12 @@ public class Game implements ActionListener{
     public Game(GamePanel gp){
         player = new Player();
         path = new Path2();
-        levels.add(new Level1(path));
-        levels.add(new Level2(path));
-        levels.add(new Level3(path));
-        levels.add(new Level4(path));
-        levels.add(new Level5(path));
-        levels.add(new Level6(path));
+        levels.add(new Level1(path, player));
+        levels.add(new Level2(path, player));
+        levels.add(new Level3(path, player));
+        levels.add(new Level4(path, player));
+        levels.add(new Level5(path, player));
+        levels.add(new Level6(path, player));
 
         currentLevel = 0;
         this.gp = gp;

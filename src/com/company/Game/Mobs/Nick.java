@@ -9,9 +9,9 @@ import java.awt.*;
  */
 public class Nick extends Mob{
     //
-    public Nick(double xPos, double yPos){
+    public Nick(double xPos, double yPos, Player player){
         //Health, speed, x, y
-        super(100,2,xPos,yPos);
+        super(100,2,xPos,yPos, player);
         color = Color.RED;
 
     }

@@ -2,6 +2,7 @@ package com.company.Game.Levels;
 
 import com.company.Game.Mobs.*;
 import com.company.Game.Paths.Path;
+import com.company.Game.Player;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,6 +19,7 @@ public abstract class Level {
     int numberOfSlowNick;
     int ticks;
     int initialNumberOfNicks;
+    Player player;
 
     int bonusForPassingLevel;
 
@@ -35,7 +37,7 @@ public abstract class Level {
     public final static int SUPER_FAT_NICK = 4;
 
 
-    public Level(Path p, int ticks) {
+    public Level(Path p, int ticks, Player player) {
         path = p;
         startX = (int)p.getPointAtIndex(0).getX();
         startY = (int)p.getPointAtIndex(0).getY();
@@ -43,6 +45,7 @@ public abstract class Level {
         currentMobIndex = 0;
         this.ticks = ticks;
         initialNumberOfNicks = 0;
+        this.player = player;
     }
 
     public void addMob(int number, int type){
@@ -50,19 +53,19 @@ public abstract class Level {
             Mob m = null;
             switch(type){
                 case NICK:
-                    m = new Nick(startX, startY);
+                    m = new Nick(startX, startY, player);
                     break;
                 case FAT_NICK:
-                    m = new FatNick(startX, startY);
+                    m = new FatNick(startX, startY, player);
                     break;
                 case FAST_NICK:
-                    m = new FastNick(startX, startY);
+                    m = new FastNick(startX, startY, player);
                     break;
                 case SLOW_NICK:
-                    m = new SlowNick(startX, startY);
+                    m = new SlowNick(startX, startY, player);
                     break;
                 case SUPER_FAT_NICK:
-                    m = new SuperFatNick(startX, startY);
+                    m = new SuperFatNick(startX, startY, player);
                     break;
             }
             if(m!=null)
@@ -97,7 +100,7 @@ public abstract class Level {
 
     public void runMobs(){
         Iterator<Mob> iter = mobs.iterator();
-        System.out.println(mobs.size());
+//        System.out.println(mobs.size());
         while (iter.hasNext()){
             Mob m = iter.next();
             if (m.act(path)){
