@@ -131,4 +131,6 @@ public abstract class Mob {
         g.setColor(color);
         g.fillRect((int)xPos - 15, (int)yPos - 15, 30, 30);
     }
+
+
 }

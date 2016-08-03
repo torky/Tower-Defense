@@ -11,7 +11,7 @@ public class Level3 extends Level{
     public Level3(Path p){
         super(p);
         path = p;
-        addMob(2, NICK);
+        addMob(5, NICK);
         addMob(5, SLOW_NICK);
         addMob(3, FAST_NICK);
 

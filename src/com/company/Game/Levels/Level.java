@@ -86,12 +86,18 @@ public abstract class Level {
             }
         }
         return true;
+//        for (Mob m:mobs){
+//            System.out.println(m);
+//        }
+//        System.out.println(mobs.size());
+//        return mobs.isEmpty();
     }
 
     public void runMobs(){
         for(Mob m: mobs){
             if (m.act(path)){
-                m = null;
+//                System.out.println("Mob died");
+//                m = null;
                 mobs.remove(m);
             }
         }
