@@ -1,7 +1,8 @@
 package com.company.UI.Panels;
 
 import com.company.Controllers.GameController;
-import com.company.UI.Buttons.TowerButton;
+import com.company.UI.Buttons.*;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,6 +18,8 @@ public class GameMenuPanel extends JPanel {
     public TowerButton mageTower;
     public TowerButton superTower;
 
+    public NextLevel nextLevel;
+
     public JTextField playerHealth;
     public JLabel playerHealthLabel;
 
@@ -30,6 +33,8 @@ public class GameMenuPanel extends JPanel {
         mageTower = new TowerButton("Mage Tower", GameController.MAGE_TOWER, gc);
         superTower = new TowerButton("Super Tower", GameController.SUPER_TOWER, gc);
 
+        nextLevel = new NextLevel(gc);
+
         playerHealth = new JTextField();
         playerHealth.setText(String.valueOf(gc.getGame().getPlayer().getHealth()));
         playerHealthLabel = new JLabel("<html><font color='white'>Health</font></html>");
@@ -39,18 +44,11 @@ public class GameMenuPanel extends JPanel {
         this.add(mageTower);
         this.add(superTower);
 
+        this.add(nextLevel);
+
         this.add(playerHealthLabel);
         this.add(playerHealth);
 
-        archerTower.setVisible(true);
-        cannon.setVisible(true);
-        mageTower.setVisible(true);
-        superTower.setVisible(true);
-
-        playerHealthLabel.setVisible(true);
-        playerHealth.setVisible(true);
-
-        this.setSize(100, 600);
         this.setPreferredSize(new Dimension(100, 600));
         this.setBackground(Color.BLACK);
         this.setVisible(true);

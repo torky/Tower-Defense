@@ -46,7 +46,6 @@ public class GameController implements KeyListener, MouseListener{
     public void mouseReleased(MouseEvent e) {
         if(e.getButton() == MouseEvent.BUTTON3){
             System.out.println("SecondMouse");
-            game.startNextLevel();
             clickState = NONE;
 
         }
