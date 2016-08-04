@@ -42,6 +42,11 @@ public class Game implements ActionListener{
 
     public void startNextLevel(){
         if(notDefeated) {
+            if (currentLevel==levels.size()){
+                System.out.println("You have successfully defended yuri!");
+                System.out.println("Congratulations, you are now worthy of Citrus!");
+                System.exit(0);
+            }
             activeLevel = levels.get(currentLevel);
             activeLevel.resetTicks();
             start();

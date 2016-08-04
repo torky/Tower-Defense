@@ -28,10 +28,10 @@ public class GameMenuPanel extends JPanel {
 
         this.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 
-        archerTower = new TowerButton("Archer Tower", GameController.ARCHER_TOWER, gc);
-        cannon = new TowerButton("Cannon", GameController.CANNON, gc);
-        mageTower = new TowerButton("Mage Tower", GameController.MAGE_TOWER, gc);
-        superTower = new TowerButton("Super Tower", GameController.SUPER_TOWER, gc);
+        archerTower = new TowerButton("Archer Tower-100", GameController.ARCHER_TOWER, gc);
+        cannon = new TowerButton("Cannon-300", GameController.CANNON, gc);
+        mageTower = new TowerButton("Mage Tower-300", GameController.MAGE_TOWER, gc);
+        superTower = new TowerButton("Super Tower-1500", GameController.SUPER_TOWER, gc);
 
         nextLevel = new NextLevel(gc);
 
@@ -49,7 +49,7 @@ public class GameMenuPanel extends JPanel {
         this.add(playerHealthLabel);
         this.add(playerHealth);
 
-        this.setPreferredSize(new Dimension(100, 600));
+        this.setPreferredSize(new Dimension(150, 600));
         this.setBackground(Color.BLACK);
         this.setVisible(true);
     }
