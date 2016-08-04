@@ -14,7 +14,7 @@ public class Player {
     private ArrayList<Tower> towers = new ArrayList<Tower>();
 
     public Player() {
-        this.money = 600;
+        this.money = 6000;
         this.health = 10;
     }
 

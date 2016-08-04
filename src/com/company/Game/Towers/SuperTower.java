@@ -37,7 +37,7 @@ public class SuperTower extends Tower{
             Projectile p = iter.next();
             if(p!=null){
                 p.act();
-                if (p.isHasHit()){
+                if (p.isHasHit() || p.getMob().getHealth()<=0){
                     iter.remove();
                 }
             }

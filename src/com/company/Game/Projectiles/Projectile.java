@@ -18,6 +18,10 @@ public class Projectile {
 
     private Mob mob;
 
+    public Mob getMob() {
+        return mob;
+    }
+
     public Projectile(double speed, int damage, double x, double y, Mob m, int size){
         this.speed = speed;
         this.damage = damage;
