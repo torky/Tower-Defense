@@ -22,6 +22,8 @@ public class GameMenuPanel extends JPanel {
 
     public JTextField playerHealth;
     public JLabel playerHealthLabel;
+    public JTextField playerMoney;
+    public JLabel playerMoneyLabel;
 
     public GameMenuPanel(GameController gc){
         this.gc = gc;
@@ -37,7 +39,16 @@ public class GameMenuPanel extends JPanel {
 
         playerHealth = new JTextField();
         playerHealth.setText(String.valueOf(gc.getGame().getPlayer().getHealth()));
+        playerHealth.setEditable(false);
         playerHealthLabel = new JLabel("<html><font color='white'>Health</font></html>");
+
+        playerMoney = new JTextField();
+        playerMoney.setText(String.valueOf(gc.getGame().getPlayer().getMoney()));
+        playerMoney.setEditable(false);
+        playerMoneyLabel = new JLabel("<html><font color='white'>Money</font></html>");
+
+        this.add(playerMoneyLabel);
+        this.add(playerMoney);
 
         this.add(archerTower);
         this.add(cannon);
@@ -52,5 +63,13 @@ public class GameMenuPanel extends JPanel {
         this.setPreferredSize(new Dimension(150, 600));
         this.setBackground(Color.BLACK);
         this.setVisible(true);
+    }
+
+    public void updateMoney(String text){
+        playerMoney.setText(text);
+    }
+
+    public void updateHealth(String text){
+        playerHealth.setText(text);
     }
 }
