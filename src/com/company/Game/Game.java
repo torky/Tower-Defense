@@ -43,9 +43,9 @@ public class Game implements ActionListener{
     public void startNextLevel(){
         if(notDefeated) {
             if (currentLevel==levels.size()){
-                System.out.println("You have successfully defended yuri!");
-                System.out.println("Congratulations, you are now worthy of Citrus!");
-                System.exit(0);
+                System.out.println("You have already won.");
+                JOptionPane.showMessageDialog(null, "You have already won.");
+                return;
             }
             activeLevel = levels.get(currentLevel);
             activeLevel.resetTicks();
@@ -76,6 +76,10 @@ public class Game implements ActionListener{
         if(activeLevel.allMobsDead()){
             currentLevel++;
             player.changeMoney(activeLevel.getBonusForPassingLevel());
+            if(currentLevel==levels.size()){
+                System.out.println("You have successfully defended yuri!");
+                JOptionPane.showMessageDialog(null, "You have successfully defended yuri!");
+            }
             stop();
         }
         activeLevel.runMobs();
