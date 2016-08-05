@@ -66,9 +66,6 @@ public class GameController implements KeyListener, MouseListener{
         gp.repaint();
         gp.getGameMenuPanel().updateMoney(""+game.getPlayer().getMoney());
         clickState = NONE;
-
-
-
     }
 
     public void mouseEntered(MouseEvent e) {

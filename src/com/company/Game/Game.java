@@ -88,6 +88,8 @@ public class Game implements ActionListener{
             notDefeated = false;
             JOptionPane.showMessageDialog(null, "You just let Nick get too much Yuri. What a disgrace.");
         }
+
+        gp.getGameMenuPanel().updateHealth(""+player.getHealth());
         gp.repaint();
     }
 

@@ -1,6 +1,10 @@
 package com.company.UI.Panels;
 
 import com.company.Controllers.GameController;
+import com.company.Game.Towers.ArcherTower;
+import com.company.Game.Towers.Cannon;
+import com.company.Game.Towers.MageTower;
+import com.company.Game.Towers.SuperTower;
 import com.company.UI.Buttons.*;
 
 
@@ -30,10 +34,10 @@ public class GameMenuPanel extends JPanel {
 
         this.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 
-        archerTower = new TowerButton("Archer Tower-100", GameController.ARCHER_TOWER, gc);
-        cannon = new TowerButton("Cannon-300", GameController.CANNON, gc);
-        mageTower = new TowerButton("Mage Tower-300", GameController.MAGE_TOWER, gc);
-        superTower = new TowerButton("Super Tower-1500", GameController.SUPER_TOWER, gc);
+        archerTower = new TowerButton("Archer Tower-" + 100, GameController.ARCHER_TOWER, gc);
+        cannon = new TowerButton("Cannon-" + 300, GameController.CANNON, gc);
+        mageTower = new TowerButton("Mage Tower-" + 300, GameController.MAGE_TOWER, gc);
+        superTower = new TowerButton("Super Tower-" + 1000, GameController.SUPER_TOWER, gc);
 
         nextLevel = new NextLevel(gc);
 

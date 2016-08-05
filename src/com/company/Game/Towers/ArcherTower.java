@@ -11,6 +11,7 @@ import java.util.Iterator;
  */
 public class ArcherTower extends Tower {
     //attackSpeed, Damage, Range, x, y, Cost
+
     public ArcherTower(double x_pos, double y_pos){
         super(20, 10, 100, x_pos, y_pos, 100);
         color = Color.BLACK;
