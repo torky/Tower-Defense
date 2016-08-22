@@ -13,7 +13,7 @@ public class ArcherTower extends Tower {
     //attackSpeed, Damage, Range, x, y, Cost
 
     public ArcherTower(double x_pos, double y_pos){
-        super(20, 10, 100, x_pos, y_pos, 100);
+        super(20, 10, 130, x_pos, y_pos, 100,"Yui.png");
         color = Color.BLACK;
 
     }
@@ -49,11 +49,9 @@ public class ArcherTower extends Tower {
     public void upgrade(){
         setAtkPeriod(15);
         setDamage(15);
-        setRange(12);
+        setRange(170);
         player.changeMoney(-125);
 
-
     }
-
 
 }

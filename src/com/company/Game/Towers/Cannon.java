@@ -13,7 +13,7 @@ import java.util.Iterator;
 public class Cannon extends Tower{
     //attackSpeed, Damage, Range, x, y, Cost
     public Cannon(double x_pos, double y_pos) {
-        super(50, 100, 70, x_pos, y_pos, 300);
+        super(50, 95, 100, x_pos, y_pos, 300, "Chinatsu.png");
         color = Color.WHITE;
     }
 
@@ -46,7 +46,7 @@ public class Cannon extends Tower{
     public void upgrade(){
         setAtkPeriod(35);
         setDamage(200);
-        setRange(80);
+        setRange(120);
         player.changeMoney(-400);
     }
 

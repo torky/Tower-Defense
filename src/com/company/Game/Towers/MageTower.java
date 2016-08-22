@@ -13,7 +13,7 @@ import java.util.Iterator;
 public class MageTower extends Tower{
     //attackSpeed, Damage, Range, x, y, Cost
     public MageTower(double x_pos, double y_pos){
-        super(30, 50, 80, x_pos, y_pos, 300);
+        super(30, 50, 110, x_pos, y_pos, 300, "Kyoko.png");
         color = Color.BLUE;
     }
 
@@ -46,7 +46,7 @@ public class MageTower extends Tower{
     public void upgrade(){
         setAtkPeriod(15);
         setDamage(60);
-        setRange(100);
+        setRange(130);
         player.changeMoney(-400);
 
     }

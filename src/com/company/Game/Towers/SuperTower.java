@@ -13,7 +13,7 @@ import java.util.Iterator;
 public class SuperTower extends Tower{
     //attackPeriod, Damage, Range, x, y, Cost
     public SuperTower(double x_pos, double y_pos){
-        super(7, 50, 180, x_pos, y_pos, 1000);
+        super(7, 50, 220, x_pos, y_pos, 1000, "Akari.png");
         color = Color.PINK;
     }
 
@@ -47,7 +47,7 @@ public class SuperTower extends Tower{
     public void upgrade(){
         setAtkPeriod(2);
         setDamage(50);
-        setRange(250);
+        setRange(320);
         player.changeMoney(-1500);
     }
 }

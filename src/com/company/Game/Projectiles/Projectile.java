@@ -60,7 +60,7 @@ public class Projectile {
     }
 
     public void draw(Graphics g){
-        g.fillOval((int)xPos - 5, (int)yPos - 5, size, size);
+        g.fillOval((int)(xPos - size/2), (int)(yPos - size/2), size, size);
     }
 
 //    public boolean equals(Object object) {
