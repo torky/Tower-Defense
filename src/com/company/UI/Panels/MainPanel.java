@@ -50,7 +50,7 @@ public class MainPanel extends JPanel{
                 this.add(game.getGameMenuPanel());
                 game.setVisible(true);
                 game.getGameMenuPanel().setVisible(true);
-                window.pack();;
+                window.pack();
                 break;
         }
 

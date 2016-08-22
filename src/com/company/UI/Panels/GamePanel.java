@@ -46,6 +46,8 @@ public class GamePanel extends JPanel{
                 m.draw(g);
             }
         }
+        getGameMenuPanel().updateMoney(""+gc.getGame().getPlayer().getMoney());
+
     }
 
 }

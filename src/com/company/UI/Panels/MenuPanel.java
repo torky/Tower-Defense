@@ -14,6 +14,8 @@ public class MenuPanel extends JPanel implements ActionListener{
     private JButton gameButton;
 
     public MenuPanel(MainPanel main){
+//        setLayout(new FlowLayout());
+
         this.main = main;
         this.setBackground(Color.BLUE);
 

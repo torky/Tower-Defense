@@ -92,6 +92,7 @@ public class Game implements ActionListener{
         }
 
         gp.getGameMenuPanel().updateHealth(""+player.getHealth());
+
         gp.repaint();
     }
 
