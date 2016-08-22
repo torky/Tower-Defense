@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class SlowNick extends Mob {
     public SlowNick(double xPos, double yPos, Player player){
-        super(300,1,xPos,yPos, player);
+        super(300,1,xPos,yPos, player,"slow.png");
         color = Color.YELLOW;
 
     }

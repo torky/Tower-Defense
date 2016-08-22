@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class FastNick extends Mob{
     public FastNick(double xPos, double yPos, Player player){
-        super(50,8,xPos,yPos, player);
+        super(50,10,xPos,yPos, player,"fast.png");
         color = Color.BLACK;
     }
 

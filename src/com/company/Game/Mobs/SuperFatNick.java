@@ -10,7 +10,7 @@ import java.awt.*;
 public class SuperFatNick extends Mob{
     //not implemented yet
     public SuperFatNick(double xPos, double yPos, Player player) {
-        super(3000, .7, xPos, yPos, player);
+        super(3000, .7, xPos, yPos, player,"superfat.png");
         color = Color.ORANGE;
     }
 }

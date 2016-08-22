@@ -3,12 +3,18 @@ package com.company.Game.Mobs;
 import com.company.Game.Paths.Path;
 import com.company.Game.Player;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by zackli on 7/30/16.
  */
 public abstract class Mob {
+    private BufferedImage image;
+
     private int health;
     private double speed;
     private double xPos;
@@ -20,13 +26,27 @@ public abstract class Mob {
 
     private int pathIndex;
 
-    public Mob(int health, double speed, double xPos, double yPos, Player player) {
+    public Mob(int health, double speed, double xPos, double yPos, Player player, String filename) {
         this.health = health;
         this.speed = speed;
         this.xPos = xPos;
         this.yPos = yPos;
         this.pathIndex = 0;
         this.player = player;
+
+        try {
+            //ImageIcon(getClass().getResource("./Akari.png"))
+            //getresource seems to work with the current folder
+            //ImageIO.read seems to go up to source folder
+
+            image = ImageIO.read(new File("./src/com/company/Game/Mobs/" +filename));
+//		      image = ImageIO.read(new File("kms.jpg"));
+        } catch (IOException ex) {
+            // handle exception...
+            System.out.println("picture error");
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+        }
 
     }
 
@@ -137,7 +157,8 @@ public abstract class Mob {
 
     public void draw(Graphics g){
         g.setColor(color);
-        g.fillRect((int)xPos - 15, (int)yPos - 15, 30, 30);
+//        g.fillRect((int)xPos - 15, (int)yPos - 15, 30, 30);
+        g.drawImage(image, (int)xPos - 20, (int)yPos - 20, null);
     }
 
 

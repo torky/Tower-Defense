@@ -48,6 +48,7 @@ public class GameMenuPanel extends JPanel {
 
         playerMoney = new JTextField();
         playerMoney.setText(String.valueOf(gc.getGame().getPlayer().getMoney()));
+        playerMoney.setColumns(5);
         playerMoney.setEditable(false);
         playerMoneyLabel = new JLabel("<html><font color='white'>Money</font></html>");
 

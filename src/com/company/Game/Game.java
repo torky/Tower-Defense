@@ -34,6 +34,8 @@ public class Game implements ActionListener{
         levels.add(new Level4(path, player));
         levels.add(new Level5(path, player));
         levels.add(new Level6(path, player));
+        levels.add(new Level7(path, player));
+
 
         currentLevel = 0;
         this.gp = gp;
