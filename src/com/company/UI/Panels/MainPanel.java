@@ -1,5 +1,6 @@
 package com.company.UI.Panels;
 
+import com.company.Game.Towers.Tower;
 import com.company.UI.Window;
 
 import javax.swing.*;
@@ -12,6 +13,7 @@ public class MainPanel extends JPanel{
 
     private MenuPanel menu;
     private GamePanel game;
+    private TowerPanel tower;
     private Window window;
 
     private int state;
@@ -55,6 +57,27 @@ public class MainPanel extends JPanel{
         }
 
         repaint();
+    }
+
+    public void selectTower(Tower t){
+        this.remove(game.getGameMenuPanel());
+        this.tower = new TowerPanel(t, game.getGameController());
+        this.add(tower);
+        window.pack();
+        repaint();
+    }
+
+    public void resetState(){
+
+        this.remove(tower);
+        this.add(game.getGameMenuPanel());
+        game.setVisible(true);
+        game.getGameMenuPanel().setVisible(true);
+        window.pack();
+
+        repaint();
+        System.out.println("Reset");
+
     }
 
 }

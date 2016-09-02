@@ -31,6 +31,12 @@ public class GamePanel extends JPanel{
     public GameMenuPanel getGameMenuPanel(){
         return gmp;
     }
+    public MainPanel getMainPanel(){
+        return main;
+    }
+    public GameController getGameController(){
+        return gc;
+    }
 
     public void paintComponent(Graphics g){
         super.paintComponent(g);

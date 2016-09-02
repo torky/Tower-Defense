@@ -72,7 +72,11 @@ public class Player {
         }
     }
 
-    //returns true if defeated
+    public void removeTower(Tower t) {
+        towers.remove(t);
+    }
+
+        //returns true if defeated
     public boolean defend(ArrayList<Mob> mobs){
         if(health <= 0){
             return true;

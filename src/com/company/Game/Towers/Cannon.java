@@ -47,7 +47,6 @@ public class Cannon extends Tower{
         setAtkPeriod(35);
         setDamage(200);
         setRange(120);
-        player.changeMoney(-400);
     }
 
 }

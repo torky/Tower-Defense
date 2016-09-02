@@ -47,7 +47,6 @@ public class MageTower extends Tower{
         setAtkPeriod(15);
         setDamage(60);
         setRange(130);
-        player.changeMoney(-400);
 
     }
 }

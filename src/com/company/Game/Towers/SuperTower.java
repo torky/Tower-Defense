@@ -48,6 +48,5 @@ public class SuperTower extends Tower{
         setAtkPeriod(2);
         setDamage(50);
         setRange(320);
-        player.changeMoney(-1500);
     }
 }

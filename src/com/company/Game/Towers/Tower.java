@@ -29,8 +29,6 @@ abstract public class Tower {
 
     ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 
-    Player player;
-
     public Tower(int atkPeriod, int damage, double range, double x_pos, double y_pos, int price, String fileName){
         this.atkPeriod = atkPeriod;
         this.damage = damage;
@@ -87,15 +85,15 @@ abstract public class Tower {
         this.damage = damage;
     }
 
-    public void setRange(float range) {
+    public void setRange(double range) {
         this.range = range;
     }
 
-    public void setX_pos(float x_pos) {
+    public void setX_pos(double x_pos) {
         this.x_pos = x_pos;
     }
 
-    public void setY_pos(float y_pos) {
+    public void setY_pos(double y_pos) {
         this.y_pos = y_pos;
     }
 
@@ -131,12 +129,6 @@ abstract public class Tower {
         return distanceSquared;
     }
 
-    public void sell(){
-        player.changeMoney((int)(price * .8));
-    }
-
-
-
     public void draw(Graphics g){
         g.setColor(color);
 //        g.drawRect((int)x_pos - 15, (int)y_pos - 15, 30, 30);
@@ -152,4 +144,13 @@ abstract public class Tower {
     abstract public void upgrade();
 
 
+    public boolean inside(int x, int y) {
+        System.out.println("x: " + x);
+        System.out.println(x_pos);
+
+        System.out.println("y: " + y);
+        System.out.println(y_pos);
+        return (x < (int)x_pos + 20 && x > (int)x_pos - 20
+                && y < (int)y_pos + 20 && y > (int)y_pos - 20);
+    }
 }

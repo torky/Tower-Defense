@@ -50,7 +50,6 @@ public class ArcherTower extends Tower {
         setAtkPeriod(15);
         setDamage(15);
         setRange(170);
-        player.changeMoney(-125);
 
     }
 
