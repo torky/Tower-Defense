@@ -5,7 +5,7 @@ import com.company.Game.Mobs.Mob;
 import java.awt.*;
 
 /**
- * Created by zackli on 7/31/16.
+ * Created by zacklee on 7/31/16.
  */
 public class Projectile {
     double speed;

@@ -11,3 +11,7 @@ out/production/Tower-Defense/com/company/Game/Levels/Level1.class
 
 >>>>>>> origin/master
 out/production/Tower-Defense/com/company/Game/Mobs/Mob.class
+
+.idea/checkstyle-idea.xml
+
+out/production/Tower-Defense/com/company/Controllers/GameController.class

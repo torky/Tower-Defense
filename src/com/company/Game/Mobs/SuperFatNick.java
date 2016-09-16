@@ -5,7 +5,7 @@ import com.company.Game.Player;
 import java.awt.*;
 
 /**
- * Created by zackli on 8/1/16.
+ * Created by zacklee on 8/1/16.
  */
 public class SuperFatNick extends Mob{
     //not implemented yet

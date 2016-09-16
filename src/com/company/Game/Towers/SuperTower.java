@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * Created by zackli on 7/30/16.
+ * Created by zacklee on 7/30/16.
  */
 public class SuperTower extends Tower{
     //attackPeriod, Damage, Range, x, y, Cost

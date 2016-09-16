@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by zackli on 7/30/16.
+ * Created by zacklee on 7/30/16.
  */
 public abstract class Mob {
     private BufferedImage image;

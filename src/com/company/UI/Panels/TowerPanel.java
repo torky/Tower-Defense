@@ -43,9 +43,9 @@ public class TowerPanel extends JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == upgrade.getActionCommand()) {
-            if (gc.getGame().getPlayer().getMoney() >= 100) {
+            if (gc.getGame().getPlayer().getMoney() >= t.getPrice()) {
                 t.upgrade();
-                gc.getGame().getPlayer().changeMoney(-100);
+                gc.getGame().getPlayer().changeMoney(-t.getPrice());
                 gc.getGamePanel().getMainPanel().resetState();
             }
         }

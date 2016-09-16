@@ -4,7 +4,7 @@ import com.company.Game.Paths.Path;
 import com.company.Game.Player;
 
 /**
- * Created by zackli on 8/1/16.
+ * Created by zacklee on 8/1/16.
  */
 public class Level6 extends Level{
     Path path;

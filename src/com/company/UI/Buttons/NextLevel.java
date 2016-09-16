@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by zackli on 8/3/16.
+ * Created by zacklee on 8/3/16.
  */
 public class NextLevel extends JButton implements ActionListener{
     private GameController gc;
